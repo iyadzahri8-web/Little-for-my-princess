@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Princess</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #fff0f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #75475a;
+}
+
+.avocado {
+    position: fixed;
+    font-size: 30px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 430px;
+    background: rgba(255,255,255,0.65);
+    padding: 25px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(180,100,130,0.12);
+}
+
+img {
+    width: 100%;
+    max-height: 310px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 21px;
+    line-height: 1.7;
+    margin: 12px 0 25px;
+}
+
+button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 14px;
+    background: #f5b6cc;
+    color: #75475a;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ee9fbd;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+    min-height: 55px;
+}
+
+.runaway {
+    position: relative;
+}
+
+.message {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.english {
+    font-size: 19px;
+    line-height: 1.9;
+    direction: ltr;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for (let i = 0; i < 28; i++) {
+    let avocado = document.createElement("div");
+    avocado.className = "avocado";
+    avocado.textContent = "🥑";
+    avocado.style.left = Math.random() * 100 + "%";
+    avocado.style.top = Math.random() * 100 + "%";
+    avocado.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(avocado);
+}
+</script>
+
+<div class="container" id="content">
+
+    <img src="princess.jpg" alt="Princess">
+
+    <h2>هل هذه الجميلة انتي🥰؟</h2>
+
+    <button onclick="step2()">نعم</button>
+
+</div>
+
+<script>
+
+function step2() {
+    document.getElementById("content").innerHTML = `
+        <h2>علابالك بلي نتي كتكوتة خلااااص😭👈🏻👉🏻؟</h2>
+        <div class="buttons">
+            <button class="runaway" onmouseover="escape(this)" onclick="escape(this)">علابالي</button>
+            <button onclick="step3()">والله معلابالي😭</button>
+        </div>
+    `;
+}
+
+function escape(btn) {
+    btn.style.position = "fixed";
+    btn.style.left = Math.random() * (window.innerWidth - 110) + "px";
+    btn.style.top = Math.random() * (window.innerHeight - 60) + "px";
+}
+
+function step3() {
+    document.getElementById("content").innerHTML = `
+        <h2>صحا هاذي معلابالكش 😔 و علابالك بلي كي تضرب فيك شمس تولي نتي اجمل منها؟😔👈🏻👉🏻</h2>
+        <div class="buttons">
+            <button class="runaway" onmouseover="escape(this)" onclick="escape(this)">علابالي😭</button>
+            <button onclick="step4()">والله معلابالي😭</button>
+        </div>
+    `;
+}
+
+function step4() {
+    document.getElementById("content").innerHTML = `
+        <h2>هاذييي تاني معلابالكش😔! صحا علابالك بلي راهي 18/11؟؟</h2>
+        <button onclick="step5()">بلاما تشوفي راهي 18 صح</button>
+    `;
+}
+
+function step5() {
+    document.getElementById("content").innerHTML = `
+        <h2>ايا ليوم يا حبيبي راهو عيد الاميرات سوووو منقدرش نخلي الاميرة تاعي هكاك👈🏻👉🏻</h2>
+        <button onclick="step6()">اعطني رسالة</button>
+    `;
+}
+
+function step6() {
+    document.getElementById("content").innerHTML = `
+        <div class="english">
+            Today is 18th November<br><br>
+            Happy Princess Day, Cutie!<br><br>
+            You deserve to feel special, not just today, but every single day💗
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
